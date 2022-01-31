@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_app_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.upb.aviation_access_admin.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_menuAdminFragment"
+            app:destination="@id/menuAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuAdminFragment"
+        android:name="com.upb.aviation_access_admin.ui.manuAdmi.MenuAdminFragment"
+        android:label="MenuAdminFragment"
+        tools:layout="@layout/fragment_menu_admin">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument android:name="password"
+            app:argType="string" />
+        <argument
+            android:name="id_user"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_menuAdminFragment_to_aircraftMainFragment"
+            app:destination="@id/aircraftMainFragment" />
+        <action
+            android:id="@+id/action_menuAdminFragment_to_flightsMainFragment"
+            app:destination="@id/flightsMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aircraftMainFragment"
+        android:name="com.upb.aviation_access_admin.ui.aircraft.AircraftMainFragment"
+        android:label="AircraftMainFragment"
+        tools:layout="@layout/fragment_aircraft_main">
+        <action
+            android:id="@+id/action_aircraftMainFragment_to_aircraftInfoFragment"
+            app:destination="@id/aircraftInfoFragment" />
+        <action
+            android:id="@+id/action_aircraftMainFragment_to_newAircraftFragment"
+            app:destination="@id/newAircraftFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightsMainFragment"
+        android:name="com.upb.aviation_access_admin.ui.flights.FlightsMainFragment"
+        android:label="FlightsMainFragment"
+        tools:layout="@layout/fragment_flights_main">
+        <action
+            android:id="@+id/action_flightsMainFragment_to_flightInfoFragment"
+            app:destination="@id/flightInfoFragment" />
+        <action
+            android:id="@+id/action_flightsMainFragment_to_newFlightFragment"
+            app:destination="@id/newFlightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightInfoFragment"
+        android:name="com.upb.aviation_access_admin.ui.flights.FlightInfoFragment"
+        android:label="FlightInfoFragment"
+        tools:layout="@layout/fragment_flight_details">
+        <argument
+            android:name="flightInfo"
+            app:argType="com.upb.aviation_access_admin.Flight" />
+        <action
+            android:id="@+id/action_flightInfoFragment_to_deleteSuccessFragment"
+            app:destination="@id/deleteSuccessFragment" />
+        <action
+            android:id="@+id/action_flightInfoFragment_to_updateFlightFragment"
+            app:destination="@id/updateFlightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aircraftInfoFragment"
+        android:name="com.upb.aviation_access_admin.ui.aircraft.AircraftInfoFragment"
+        android:label="AircraftInfoFragment"
+        tools:layout="@layout/fragment_aircraft_details">
+        <argument
+            android:name="aircraftInfo"
+            app:argType="com.upb.aviation_access_admin.Aircraft" />
+        <action
+            android:id="@+id/action_aircraftInfoFragment_to_deleteSuccessFragment"
+            app:destination="@id/deleteSuccessFragment" />
+        <action
+            android:id="@+id/action_aircraftInfoFragment_to_updateAircraftFragment"
+            app:destination="@id/updateAircraftFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteSuccessFragment"
+        android:name="com.upb.aviation_access_admin.ui.successPages.DeleteSuccessFragment"
+        android:label="DeleteSuccessFragment"
+        tools:layout="@layout/fragment_delete_success">
+        <action
+            android:id="@+id/action_deleteSuccessFragment_to_menuAdminFragment"
+            app:destination="@id/menuAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFlightFragment"
+        android:name="com.upb.aviation_access_admin.ui.flights.NewFlightFragment"
+        android:label="NewFlightFragment"
+        tools:layout="@layout/fragment_new_flight">
+        <action
+            android:id="@+id/action_newFlightFragment_to_createSuccessFragment"
+            app:destination="@id/createSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newAircraftFragment"
+        android:name="com.upb.aviation_access_admin.ui.aircraft.NewAircraftFragment"
+        android:label="NewAircraftFragment"
+        tools:layout="@layout/fragment_new_aircraft">
+        <action
+            android:id="@+id/action_newAircraftFragment_to_createSuccessFragment"
+            app:destination="@id/createSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createSuccessFragment"
+        android:name="com.upb.aviation_access_admin.ui.successPages.CreateSuccessFragment"
+        android:label="CreateSuccessFragment"
+        tools:layout="@layout/fragment_create_success">
+        <action
+            android:id="@+id/action_createSuccessFragment_to_menuAdminFragment"
+            app:destination="@id/menuAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateAircraftFragment"
+        android:name="com.upb.aviation_access_admin.ui.aircraft.UpdateAircraftFragment"
+        android:label="UpdateAircraftFragment"
+        tools:layout="@layout/fragment_update_aircraft">
+        <action
+            android:id="@+id/action_updateAircraftFragment_to_updateSuccessFragment"
+            app:destination="@id/updateSuccessFragment" />
+        <argument
+            android:name="aircraftInfo"
+            app:argType="com.upb.aviation_access_admin.Aircraft" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFlightFragment"
+        android:name="com.upb.aviation_access_admin.ui.flights.UpdateFlightFragment"
+        android:label="UpdateFlightFragment"
+        tools:layout="@layout/fragment_update_flight">
+        <action
+            android:id="@+id/action_updateFlightFragment_to_updateSuccessFragment"
+            app:destination="@id/updateSuccessFragment" />
+        <argument
+            android:name="flightInfo"
+            app:argType="com.upb.aviation_access_admin.Flight" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSuccessFragment"
+        android:name="com.upb.aviation_access_admin.ui.successPages.UpdateSuccessFragment"
+        android:label="UpdateSuccessFragment"
+        tools:layout="@layout/fragment_update_success">
+        <action
+            android:id="@+id/action_updateSuccessFragment_to_menuAdminFragment"
+            app:destination="@id/menuAdminFragment" />
+    </fragment>
+</navigation>

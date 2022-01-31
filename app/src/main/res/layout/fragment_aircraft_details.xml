@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="aircraftInfo"
+            type="com.upb.aviation_access_admin.Aircraft" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/AzulClaro1">
+
+        <ImageView
+            android:id="@+id/imgFontArticleSearchInfo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRightArticleInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeftArticleInfo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/button_background" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineLeftArticleInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRightArticleInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92" />
+
+        <ImageView
+            android:id="@+id/imgBookPhotoArInfo"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="@+id/imgFontArticleSearchInfo"
+            app:layout_constraintTop_toTopOf="@+id/imgFontArticleSearchInfo"
+            app:srcUrl="@{aircraftInfo.imagen_url}"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txModelo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="56dp"
+            android:text="@{aircraftInfo.modelo}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightArticleInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgBookPhotoArInfo"
+            app:layout_constraintTop_toTopOf="@+id/imgFontArticleSearchInfo"
+            tools:text="Modelo" />
+
+        <TextView
+            android:id="@+id/txFabricanteAir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:text="@{aircraftInfo.fabricante}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightArticleInfo"
+            app:layout_constraintHorizontal_bias="0.851"
+            app:layout_constraintStart_toEndOf="@+id/imgBookPhotoArInfo"
+            app:layout_constraintTop_toBottomOf="@+id/txModelo"
+            tools:text="Fabricante" />
+
+        <TextView
+            android:id="@+id/txSinopsisArInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Sinopsis: "
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftArticleInfo"
+            app:layout_constraintTop_toBottomOf="@+id/imgBookPhotoArInfo" />
+
+
+        <ScrollView
+            android:id="@+id/txSinopsisTextArInfo"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="@id/imgFontArticleSearchInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imgFontArticleSearchInfo"
+            app:layout_constraintTop_toBottomOf="@+id/txSinopsisArInfo" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{aircraftInfo.descripcion}"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Eget magna fermentum iaculis eu non diam. Fermentum posuere urna nec tincidunt praesent semper feugiat. Nisi vitae suscipit tellus mauris a diam maecenas. Cursus euismod quis viverra nibh cras. Tincidunt vitae semper quis lectus nulla. Fermentum dui faucibus in ornare quam viverra. Non arcu risus quis varius quam quisque id diam vel. Aliquam eleifend mi in nulla posuere. Ultricies lacus sed turpis tincidunt id. Malesuada fames ac turpis egestas. Tellus integer feugiat scelerisque varius morbi enim nunc. Pretium fusce id velit ut."/>
+
+        </ScrollView>
+
+
+        <ImageView
+            android:id="@+id/btDeleteAircraft"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/imgFontArticleSearchInfo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imgFontArticleSearchInfo"
+            app:layout_constraintTop_toBottomOf="@+id/btUpdateAircraft"
+            app:srcCompat="@drawable/button_background_2" />
+
+        <TextView
+            android:id="@+id/txButtonReservarArInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Aeronave"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/btDeleteAircraft"
+            app:layout_constraintEnd_toEndOf="@+id/btDeleteAircraft"
+            app:layout_constraintStart_toStartOf="@+id/btDeleteAircraft"
+            app:layout_constraintTop_toTopOf="@+id/btDeleteAircraft" />
+
+        <ImageView
+            android:id="@+id/btUpdateAircraft"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/imgFontArticleSearchInfo"
+            app:layout_constraintStart_toStartOf="@+id/imgFontArticleSearchInfo"
+            app:layout_constraintTop_toBottomOf="@+id/txSinopsisTextArInfo"
+            app:srcCompat="@drawable/button_background_2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Información"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btUpdateAircraft"
+            app:layout_constraintEnd_toEndOf="@+id/btUpdateAircraft"
+            app:layout_constraintStart_toStartOf="@+id/btUpdateAircraft"
+            app:layout_constraintTop_toTopOf="@+id/btUpdateAircraft" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

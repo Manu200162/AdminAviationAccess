@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AzulClaro1">
+
+
+    <ImageView
+        android:id="@+id/btSearchAircraft"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_background" />
+
+    <ImageView
+        android:id="@+id/icon_search2"
+        android:layout_width="44dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btSearchAircraft"
+        app:layout_constraintStart_toStartOf="@+id/btSearchAircraft"
+        app:layout_constraintTop_toTopOf="@+id/btSearchAircraft"
+        app:srcCompat="@drawable/ic_search" />
+
+    <EditText
+        android:id="@+id/txTextoBusquedaAeronave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Buscar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btSearchAircraft"
+        app:layout_constraintStart_toEndOf="@+id/icon_search2"
+        app:layout_constraintTop_toTopOf="@+id/btSearchAircraft" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSearchSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftAircraft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRightAircraft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAircraftList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineFinalAircraft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRightAircraft"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftAircraft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineSearchSection"
+        tools:listitem="@layout/aircraft_item" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFinalAircraft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <ImageView
+        android:id="@+id/btAddAircraft"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRightAircraft"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftAircraft"
+        app:layout_constraintTop_toBottomOf="@+id/rvAircraftList"
+        app:srcCompat="@drawable/button_background_2" />
+
+    <TextView
+        android:id="@+id/txAddAircraft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir Aeronave"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btAddAircraft"
+        app:layout_constraintEnd_toEndOf="@+id/btAddAircraft"
+        app:layout_constraintStart_toStartOf="@+id/btAddAircraft"
+        app:layout_constraintTop_toTopOf="@+id/btAddAircraft" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

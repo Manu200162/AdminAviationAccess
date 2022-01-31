@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="flightD"
+            type="com.upb.aviation_access_admin.Flight" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/AzulClaro1">
+
+        <ImageView
+            android:id="@+id/infoFlightContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/button_background" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="@+id/infoFlightContainer"
+            app:layout_constraintStart_toStartOf="@+id/infoFlightContainer"
+            app:layout_constraintTop_toTopOf="@+id/infoFlightContainer"
+            tools:srcCompat="@drawable/activities"
+            srcUrl2="@{flightD.img_vuelo}"/>
+
+        <TextView
+            android:id="@+id/flightName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="25dp"
+            android:text="@{flightD.nombre}"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@id/infoFlightContainer"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            tools:text="La Paz-Santa Cruz" />
+
+        <TextView
+            android:id="@+id/airlineInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:text="@{flightD.aerolinea}"
+            tools:text="Boa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/flightName" />
+
+        <TextView
+            android:id="@+id/timeFlightInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:text="@{flightD.aeronave}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/airlineInfo"
+            tools:text="777" />
+
+        <TextView
+            android:id="@+id/countriesInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:text="@{flightD.id_aircraft}"
+            tools:text="2"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/timeFlightInfo" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            android:text="Aerolinea:"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/infoFlightContainer"
+            app:layout_constraintTop_toBottomOf="@+id/flightName" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            android:text="Aeronave:"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/infoFlightContainer"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            android:text="Id_aircraft:"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/infoFlightContainer"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+        <ImageView
+            android:id="@+id/buttonEliminarUsuario"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="@+id/infoFlightContainer"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/infoFlightContainer"
+            app:layout_constraintTop_toBottomOf="@+id/btUpdateFlight"
+            app:srcCompat="@drawable/button_background_2" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Vuelo"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonEliminarUsuario"
+            app:layout_constraintEnd_toEndOf="@id/buttonEliminarUsuario"
+            app:layout_constraintStart_toStartOf="@+id/buttonEliminarUsuario"
+            app:layout_constraintTop_toTopOf="@+id/buttonEliminarUsuario" />
+
+        <ImageView
+            android:id="@+id/btUpdateFlight"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="@+id/infoFlightContainer"
+            app:layout_constraintStart_toStartOf="@+id/infoFlightContainer"
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:srcCompat="@drawable/button_background_2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Información"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/btUpdateFlight"
+            app:layout_constraintEnd_toEndOf="@+id/btUpdateFlight"
+            app:layout_constraintStart_toStartOf="@+id/btUpdateFlight"
+            app:layout_constraintTop_toTopOf="@+id/btUpdateFlight" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
